@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatima - Full Stack Developer & Designer</title>
-    <meta name="description" content="Full Stack Developer, UI/UX Designer, and Graphic Designer portfolio">
+    <title>Alex Chen - Full Stack Developer & Designer</title>
+    <meta name="description" content="Full Stack Developer, UI/UX Designer, and Graphic Designer creating digital experiences">
     
-    <!-- GitHub Pages doesn't require these but good for local -->
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/responsive.css">
     
@@ -15,232 +21,429 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav id="navbar" class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">Fatima</a>
+                <a href="#home">AlexChen</a>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-<!-- Replace the simple hero with this -->
-<section id="hero" class="hero">
-    <canvas id="particle-canvas"></canvas>
-    <div class="hero-content">
-        <div class="hero-text">
-            <h1 class="hero-title">
-                <span class="title-line">Hello, I'm</span>
-                <span class="title-name">John Doe</span>
-            </h1>
-            <div class="typewriter">
-                <span class="type-text">Full Stack Developer</span>
-                <span class="type-cursor">|</span>
-            </div>
-            <p class="hero-description">
-                I craft <span class="highlight">digital experiences</span> that blend 
-                cutting-edge technology with stunning design.
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary magnetic">
-                    <span>View My Work</span>
-                    <div class="btn-hover"></div>
-                </a>
-                <a href="#contact" class="btn btn-secondary magnetic">
-                    <span>Let's Talk</span>
-                </a>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="floating-card dev-card">
-                <div class="card-icon">💻</div>
-                <h4>Development</h4>
-                <p>React, Node.js, Python</p>
-            </div>
-            <div class="floating-card design-card">
-                <div class="card-icon">🎨</div>
-                <h4>UI/UX Design</h4>
-                <p>Figma, Prototyping</p>
-            </div>
-            <div class="floating-card graphic-card">
-                <div class="card-icon">✨</div>
-                <h4>Graphic Design</h4>
-                <p>Branding, Visual Identity</p>
-            </div>
-        </div>
-    </div>
-    <div class="scroll-indicator">
-        <div class="mouse">
-            <div class="wheel"></div>
-        </div>
-        <p>Scroll to explore</p>
-    </div>
-</section>
-
-<!-- Enhanced Projects Section -->
-<section id="projects" class="projects">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Featured Work</h2>
-            <p class="section-subtitle">A showcase of my latest projects across development and design</p>
-        </div>
-
-        <div class="projects-grid">
-            <!-- Project 1 with 3D effect -->
-            <div class="project-card" data-category="development">
-                <div class="project-media">
-                    <div class="project-image">
-                        <img src="images/projects/ecommerce-3d.png" alt="E-commerce Platform">
-                        <div class="project-badge">Full Stack</div>
+    <section id="home" class="hero">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Hello, I'm</span>
+                        <span class="title-name">Alex Chen</span>
+                    </h1>
+                    <div class="typewriter-container">
+                        <span class="type-text">Full Stack Developer</span>
+                        <span class="type-cursor">|</span>
                     </div>
-                    <div class="project-demo">
-                        <video autoplay loop muted playsinline>
-                            <source src="videos/ecommerce-demo.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3 class="project-title">E-commerce Platform</h3>
-                        <div class="project-links">
-                            <a href="#" class="project-link" data-tooltip="Live Demo">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="#" class="project-link" data-tooltip="Source Code">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="project-link" data-tooltip="Case Study">
-                                <i class="fas fa-book"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        A modern e-commerce solution built with React, Node.js, and MongoDB. 
-                        Features real-time inventory, payment processing, and admin dashboard.
+                    <p class="hero-description">
+                        I craft <span class="highlight">digital experiences</span> that blend 
+                        cutting-edge technology with stunning design. 
+                        From concept to deployment, I bring ideas to life.
                     </p>
-                    <div class="project-stats">
-                        <div class="stat">
-                            <span class="stat-number">+40%</span>
-                            <span class="stat-label">Conversion Rate</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">2.5s</span>
-                            <span class="stat-label">Load Time</span>
-                        </div>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary magnetic">
+                            <span>View My Work</span>
+                            <div class="btn-hover"></div>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary magnetic">
+                            <span>Let's Talk</span>
+                        </a>
                     </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Stripe API</span>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card dev-card glass-effect">
+                        <div class="card-icon">💻</div>
+                        <h4>Development</h4>
+                        <p>React, Node.js, Python</p>
+                    </div>
+                    <div class="floating-card design-card glass-effect">
+                        <div class="card-icon">🎨</div>
+                        <h4>UI/UX Design</h4>
+                        <p>Figma, Prototyping</p>
+                    </div>
+                    <div class="floating-card graphic-card glass-effect">
+                        <div class="card-icon">✨</div>
+                        <h4>Graphic Design</h4>
+                        <p>Branding, Visual Identity</p>
                     </div>
                 </div>
             </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p>Scroll to explore</p>
+            </div>
+        </div>
+    </section>
 
-            <!-- Design Project -->
-            <div class="project-card" data-category="ui-ux">
-                <div class="project-media">
-                    <div class="design-mockups">
-                        <div class="mockup mobile">
-                            <img src="images/projects/fitness-app-mobile.png" alt="Mobile Design">
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">A showcase of my latest projects across development and design</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="development">Development</button>
+                <button class="filter-btn" data-filter="ui-ux">UI/UX Design</button>
+                <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1 - Development -->
+                <div class="project-card glass-effect" data-category="development">
+                    <div class="project-media">
+                        <div class="project-image">
+                            <img src="images/projects/ecommerce-platform.jpg" alt="E-commerce Platform">
+                            <div class="project-badge">Full Stack</div>
                         </div>
-                        <div class="mockup desktop">
-                            <img src="images/projects/fitness-app-desktop.png" alt="Desktop Design">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">E-commerce Platform</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link" data-tooltip="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" data-tooltip="Source Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" data-tooltip="Case Study">
+                                    <i class="fas fa-book"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A modern e-commerce solution built with React, Node.js, and MongoDB. 
+                            Features real-time inventory, payment processing, and admin dashboard.
+                        </p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-number">+40%</span>
+                                <span class="stat-label">Conversion Rate</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">2.5s</span>
+                                <span class="stat-label">Load Time</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe API</span>
                         </div>
                     </div>
                 </div>
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3 class="project-title">Fitness App UI/UX</h3>
-                        <div class="project-links">
-                            <a href="#" class="project-link" data-tooltip="Figma Prototype">
-                                <i class="fab fa-figma"></i>
-                            </a>
-                            <a href="#" class="project-link" data-tooltip="Case Study">
-                                <i class="fas fa-book"></i>
-                            </a>
+
+                <!-- Project 2 - UI/UX Design -->
+                <div class="project-card glass-effect" data-category="ui-ux">
+                    <div class="project-media">
+                        <div class="design-mockups">
+                            <div class="mockup mobile">
+                                <img src="images/projects/fitness-mobile.png" alt="Mobile Design">
+                            </div>
+                            <div class="mockup desktop">
+                                <img src="images/projects/fitness-desktop.png" alt="Desktop Design">
+                            </div>
                         </div>
                     </div>
-                    <p class="project-description">
-                        Complete mobile app redesign focusing on user engagement and workout tracking. 
-                        Conducted user research and A/B testing to optimize the experience.
-                    </p>
-                    <div class="design-process">
-                        <div class="process-step">
-                            <span class="step-number">1</span>
-                            <span class="step-name">Research</span>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Fitness App UI/UX</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link" data-tooltip="Figma Prototype">
+                                    <i class="fab fa-figma"></i>
+                                </a>
+                                <a href="#" class="project-link" data-tooltip="Case Study">
+                                    <i class="fas fa-book"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="process-step">
-                            <span class="step-number">2</span>
-                            <span class="step-name">Wireframe</span>
+                        <p class="project-description">
+                            Complete mobile app redesign focusing on user engagement and workout tracking. 
+                            Conducted user research and A/B testing to optimize the experience.
+                        </p>
+                        <div class="design-process">
+                            <div class="process-step">
+                                <span class="step-number">1</span>
+                                <span class="step-name">Research</span>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-number">2</span>
+                                <span class="step-name">Wireframe</span>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-number">3</span>
+                                <span class="step-name">Prototype</span>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-number">4</span>
+                                <span class="step-name">Test</span>
+                            </div>
                         </div>
-                        <div class="process-step">
-                            <span class="step-number">3</span>
-                            <span class="step-name">Prototype</span>
+                        <div class="project-tech">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">User Research</span>
+                            <span class="tech-tag">Prototyping</span>
                         </div>
-                        <div class="process-step">
-                            <span class="step-number">4</span>
-                            <span class="step-name">Test</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Graphic Design -->
+                <div class="project-card glass-effect" data-category="graphic">
+                    <div class="project-media">
+                        <div class="project-image">
+                            <img src="images/projects/coffee-branding.jpg" alt="Coffee Shop Branding">
+                            <div class="project-badge">Brand Identity</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Coffee Shop Branding</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link" data-tooltip="Behance">
+                                    <i class="fab fa-behance"></i>
+                                </a>
+                                <a href="#" class="project-link" data-tooltip="View More">
+                                    <i class="fas fa-images"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Complete brand identity for a local coffee shop including logo design, 
+                            packaging, merchandise, and marketing materials.
+                        </p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-number">+25%</span>
+                                <span class="stat-label">Brand Recognition</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Assets Created</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Illustrator</span>
+                            <span class="tech-tag">Photoshop</span>
+                            <span class="tech-tag">InDesign</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">A comprehensive overview of my technical and design capabilities</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Development Skills -->
+                <div class="skill-category glass-effect">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Development</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">React & Next.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="90"></div>
+                            </div>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js & Express</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="85"></div>
+                            </div>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python & Django</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="80"></div>
+                            </div>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Database Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="88"></div>
+                            </div>
+                            <span class="skill-percent">88%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design Skills -->
+                <div class="skill-category glass-effect">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Design</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">UI/UX Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="92"></div>
+                            </div>
+                            <span class="skill-percent">92%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Figma & Prototyping</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="95"></div>
+                            </div>
+                            <span class="skill-percent">95%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Adobe Creative Suite</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="88"></div>
+                            </div>
+                            <span class="skill-percent">88%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">User Research</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="85"></div>
+                            </div>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="skill-category glass-effect">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Tools & Tech</h3>
+                    </div>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-server"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>
-                        I'm a multidisciplinary creator with expertise in full-stack development, 
-                        UI/UX design, and graphic design. I bridge the gap between technical 
-                        implementation and creative vision.
-                    </p>
-                    
-                    <div class="skills-section">
-                        <h3>Development Skills</h3>
-                        <div class="skills">
-                            <span class="skill">React</span>
-                            <span class="skill">Node.js</span>
-                            <span class="skill">JavaScript</span>
-                            <span class="skill">Python</span>
-                            <span class="skill">Java</span>
-                            <span class="skill">Flutter (Dart)</span>
-                            <span class="skill">MongoDB</span>
-                            <span class="skill">Git</span>
+                    <div class="section-header">
+                        <h2 class="section-title">About Me</h2>
+                        <p class="section-subtitle">Passionate creator bridging technology and design</p>
+                    </div>
+                    <div class="about-description">
+                        <p>
+                            I'm a multidisciplinary developer and designer with over 5 years of experience 
+                            creating digital products that users love. My unique background allows me to 
+                            bridge the gap between technical implementation and creative vision.
+                        </p>
+                        <p>
+                            I believe in creating solutions that are not only functional and efficient 
+                            but also beautiful and intuitive. Every pixel and every line of code matters 
+                            in crafting exceptional user experiences.
+                        </p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Client Satisfaction</span>
                         </div>
                     </div>
-
-                    <div class="skills-section">
-                        <h3>Design Skills</h3>
-                        <div class="skills">
-                            <span class="skill">Figma</span>
-                            <span class="skill">Adobe Creative Suite</span>
-                            <span class="skill">User Research</span>
-                            <span class="skill">Wireframing</span>
-                            <span class="skill">Prototyping</span>
-                            <span class="skill">Brand Identity</span>
+                    <div class="about-actions">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="resume.pdf" class="btn btn-secondary" download>
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-container glass-effect">
+                        <img src="images/profile.jpg" alt="Alex Chen">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h4>Always Learning</h4>
+                                <p>Currently exploring AI/ML integration</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- <div class="about-image">
-                    <img src="images/profile.jpg" alt="Your Name">
-                </div> -->
             </div>
         </div>
     </section>
@@ -248,34 +451,83 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's create something amazing together</p>
+            </div>
+
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Let's work together</h3>
-                    <p>I'm available for freelance projects and full-time opportunities.</p>
-                    
-                    <div class="contact-links">
-                        <a href="mailto:thesmartdesigns4@gmail.com
-" class="contact-link">
-                            thesmartdesigns4@gmail.com
+                    <div class="contact-item glass-effect">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>alex@example.com</p>
+                            <a href="mailto:alex@example.com">Send Message</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item glass-effect">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                            <a href="tel:+15551234567">Call Now</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item glass-effect">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>San Francisco, CA</p>
+                            <a href="#">View on Map</a>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" data-tooltip="GitHub">
+                            <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://github.com/SmartCreativesAgency" class="contact-link">
-                            GitHub
+                        <a href="#" class="social-link" data-tooltip="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
                         </a>
-                        <!-- <a href="https://linkedin.com/in/yourusername" class="contact-link">
-                            💼 LinkedIn
-                        </a> -->
-                        <a href="https://www.behance.net/thesmart" class="contact-link">
-                            Behance
+                        <a href="#" class="social-link" data-tooltip="Behance">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="#" class="social-link" data-tooltip="Dribbble">
+                            <i class="fab fa-dribbble"></i>
                         </a>
                     </div>
                 </div>
-                
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+
+                <form class="contact-form glass-effect" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" required>
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </form>
             </div>
         </div>
@@ -284,11 +536,45 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Fatima Rizvi. All rights reserved.</p>
-            <p>Built with ❤️ and hosted on GitHub Pages</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Alex Chen</h3>
+                    <p>Creating digital experiences that inspire and engage</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <a href="#home">Home</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="#">Web Development</a>
+                        <a href="#">UI/UX Design</a>
+                        <a href="#">Branding</a>
+                        <a href="#">Consulting</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="#">GitHub</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Behance</a>
+                        <a href="#">Dribbble</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Alex Chen. All rights reserved.</p>
+                <p>Built with ❤️ and hosted on GitHub Pages</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="scripts/particles.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/filter.js"></script>
 </body>
