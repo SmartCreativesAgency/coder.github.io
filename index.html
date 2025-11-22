@@ -88,103 +88,117 @@
     </div>
 </section>
 
-    <!-- Projects Section with Filtering -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">My Work</h2>
-            
-            <!-- Role Filter Buttons -->
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All Work</button>
-                <button class="filter-btn" data-filter="development">Development</button>
-                <button class="filter-btn" data-filter="ui-ux">UI/UX Design</button>
-                <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+<!-- Enhanced Projects Section -->
+<section id="projects" class="projects">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Featured Work</h2>
+            <p class="section-subtitle">A showcase of my latest projects across development and design</p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1 with 3D effect -->
+            <div class="project-card" data-category="development">
+                <div class="project-media">
+                    <div class="project-image">
+                        <img src="images/projects/ecommerce-3d.png" alt="E-commerce Platform">
+                        <div class="project-badge">Full Stack</div>
+                    </div>
+                    <div class="project-demo">
+                        <video autoplay loop muted playsinline>
+                            <source src="videos/ecommerce-demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">E-commerce Platform</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-tooltip="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link" data-tooltip="Source Code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link" data-tooltip="Case Study">
+                                <i class="fas fa-book"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A modern e-commerce solution built with React, Node.js, and MongoDB. 
+                        Features real-time inventory, payment processing, and admin dashboard.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">+40%</span>
+                            <span class="stat-label">Conversion Rate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2.5s</span>
+                            <span class="stat-label">Load Time</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Stripe API</span>
+                    </div>
+                </div>
             </div>
 
-            <!-- Projects Grid -->
-            <div class="projects-grid">
-                
-                <!-- Full Stack Developer Project -->
-                <div class="project-card" data-category="development">
-                    <div class="project-image">
-                        <img src="images/projects/dev-project-1.jpg" alt="E-commerce Platform">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link">Live Demo</a>
-                                <a href="#" class="project-link">GitHub</a>
-                            </div>
+            <!-- Design Project -->
+            <div class="project-card" data-category="ui-ux">
+                <div class="project-media">
+                    <div class="design-mockups">
+                        <div class="mockup mobile">
+                            <img src="images/projects/fitness-app-mobile.png" alt="Mobile Design">
                         </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">E-commerce Platform</h3>
-                        <p class="project-description">
-                            Full-stack e-commerce solution with React, Node.js, and MongoDB
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
+                        <div class="mockup desktop">
+                            <img src="images/projects/fitness-app-desktop.png" alt="Desktop Design">
                         </div>
-                        <span class="project-role developer">Development</span>
                     </div>
                 </div>
-
-                <!-- UI/UX Design Project -->
-                <div class="project-card" data-category="ui-ux">
-                    <div class="project-image">
-                        <img src="images/projects/design-project-1.jpg" alt="Mobile App Design">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link">Case Study</a>
-                                <a href="#" class="project-link">Figma</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
+                <div class="project-content">
+                    <div class="project-header">
                         <h3 class="project-title">Fitness App UI/UX</h3>
-                        <p class="project-description">
-                            Complete mobile app design with user research and prototyping
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Figma</span>
-                            <span class="tech-tag">User Research</span>
-                            <span class="tech-tag">Prototyping</span>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-tooltip="Figma Prototype">
+                                <i class="fab fa-figma"></i>
+                            </a>
+                            <a href="#" class="project-link" data-tooltip="Case Study">
+                                <i class="fas fa-book"></i>
+                            </a>
                         </div>
-                        <span class="project-role designer">UI/UX Design</span>
+                    </div>
+                    <p class="project-description">
+                        Complete mobile app redesign focusing on user engagement and workout tracking. 
+                        Conducted user research and A/B testing to optimize the experience.
+                    </p>
+                    <div class="design-process">
+                        <div class="process-step">
+                            <span class="step-number">1</span>
+                            <span class="step-name">Research</span>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">2</span>
+                            <span class="step-name">Wireframe</span>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">3</span>
+                            <span class="step-name">Prototype</span>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">4</span>
+                            <span class="step-name">Test</span>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Graphic Design Project -->
-                <div class="project-card" data-category="graphic">
-                    <div class="project-image">
-                        <img src="images/projects/graphic-project-1.jpg" alt="Brand Identity">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://www.behance.net/thesmartdesigns" class="project-link">Behance</a>
-                                <a href="https://www.behance.net/thesmartdesigns" class="project-link">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Clothing Store Branding</h3>
-                        <p class="project-description">
-                            Complete brand identity including logo, packaging, and marketing materials
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Illustrator</span>
-                            <span class="tech-tag">Photoshop</span>
-                            <span class="tech-tag">Figma</span>
-                            <span class="tech-tag">Canva</span>
-                        </div>
-                        <span class="project-role graphic">Graphic Design</span>
-                    </div>
-                </div>
-
-                <!-- Add more projects as needed -->
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
