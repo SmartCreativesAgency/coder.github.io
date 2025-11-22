@@ -6,7 +6,14 @@
 }
 
 :root {
-    --primary-color: #2563eb;
+     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --dark-bg: #0f172a;
+    --darker-bg: #020617;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    /* --primary-color: #2563eb;
     --secondary-color: #7c3aed;
     --accent-color: #06b6d4;
     --text-dark: #1f2937;
@@ -14,7 +21,23 @@
     --bg-light: #f8fafc;
     --bg-white: #ffffff;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px;
+    --border-radius: 8px; */
+}
+/* Particle Canvas */
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+/* Glass Morphism Effect */
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
 }
 
 body {
@@ -89,26 +112,86 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 120px 20px 80px;
-    background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+ position: relative;
+    min-height: 100vh;
+    background: var(--dark-bg);
+    color: white;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    justify-content: center;
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 600px;
+    /* flex: 1;
+    max-width: 600px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1400px;
+    padding: 0 2rem;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 800;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+.title-line {
+    display: block;
+    font-size: 1.5rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+
+.title-name {
+    background: linear-gradient(135deg, #60a5fa, #a855f7, #ec4899);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Typewriter Effect */
+.typewriter {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    height: 2rem;
+}
+
+.type-text {
+    background: linear-gradient(135deg, #60a5fa, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.type-cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Magnetic Buttons */
+.magnetic {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.magnetic:hover {
+    transform: translateY(-2px);
 }
 
 .role-tags {
@@ -117,7 +200,96 @@ body {
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
 }
+.btn-hover {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
 
+.magnetic:hover .btn-hover {
+    left: 100%;
+}
+
+/* Floating Cards */
+.floating-card {
+    position: absolute;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.dev-card {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.design-card {
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.graphic-card {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #94a3b8;
+}
+
+.mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid #94a3b8;
+    border-radius: 12px;
+    margin: 0 auto 0.5rem;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: #94a3b8;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    100% { transform: translateX(-50%) translateY(16px); opacity: 0; }
+}
 .role-tag {
     padding: 0.5rem 1rem;
     border-radius: 50px;
