@@ -35,27 +35,58 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Fatima Rizvi</h1>
-            <div class="role-tags">
-                <span class="role-tag developer">Full Stack Developer</span>
-                <span class="role-tag designer">UI/UX Designer</span>
-                <span class="role-tag graphic">Graphic Designer</span>
+<!-- Replace the simple hero with this -->
+<section id="hero" class="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title">
+                <span class="title-line">Hello, I'm</span>
+                <span class="title-name">John Doe</span>
+            </h1>
+            <div class="typewriter">
+                <span class="type-text">Full Stack Developer</span>
+                <span class="type-cursor">|</span>
             </div>
             <p class="hero-description">
-                I create digital experiences from concept to deployment, 
-                blending code with creative design.
+                I craft <span class="highlight">digital experiences</span> that blend 
+                cutting-edge technology with stunning design.
             </p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                <a href="#projects" class="btn btn-primary magnetic">
+                    <span>View My Work</span>
+                    <div class="btn-hover"></div>
+                </a>
+                <a href="#contact" class="btn btn-secondary magnetic">
+                    <span>Let's Talk</span>
+                </a>
             </div>
         </div>
         <div class="hero-visual">
-            <!-- Optional: Add your illustration or photo -->
+            <div class="floating-card dev-card">
+                <div class="card-icon">💻</div>
+                <h4>Development</h4>
+                <p>React, Node.js, Python</p>
+            </div>
+            <div class="floating-card design-card">
+                <div class="card-icon">🎨</div>
+                <h4>UI/UX Design</h4>
+                <p>Figma, Prototyping</p>
+            </div>
+            <div class="floating-card graphic-card">
+                <div class="card-icon">✨</div>
+                <h4>Graphic Design</h4>
+                <p>Branding, Visual Identity</p>
+            </div>
         </div>
-    </section>
+    </div>
+    <div class="scroll-indicator">
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
+        <p>Scroll to explore</p>
+    </div>
+</section>
 
     <!-- Projects Section with Filtering -->
     <section id="projects" class="projects">
