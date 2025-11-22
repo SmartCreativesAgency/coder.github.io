@@ -13,19 +13,44 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const filterValue = this.getAttribute('data-filter');
             
-            // Filter projects
+            // Filter projects with animation
             projectCards.forEach(card => {
-                if (filterValue === 'all') {
+                const category = card.getAttribute('data-category');
+                
+                if (filterValue === 'all' || category === filterValue) {
                     card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
                 } else {
-                    const category = card.getAttribute('data-category');
-                    if (category === filterValue) {
-                        card.style.display = 'block';
-                    } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
                         card.style.display = 'none';
-                    }
+                    }, 300);
                 }
             });
         });
     });
+
+    // Add shuffle animation to projects
+    function shuffleProjects() {
+        const grid = document.querySelector('.projects-grid');
+        if (!grid) return;
+
+        for (let i = grid.children.length; i >= 0; i--) {
+            grid.appendChild(grid.children[Math.random() * i | 0]);
+        }
+    }
+
+    // Optional: Add shuffle button
+    const filterContainer = document.querySelector('.filter-buttons');
+    if (filterContainer) {
+        const shuffleBtn = document.createElement('button');
+        shuffleBtn.className = 'filter-btn';
+        shuffleBtn.innerHTML = '<i class="fas fa-random"></i> Shuffle';
+        shuffleBtn.addEventListener('click', shuffleProjects);
+        filterContainer.appendChild(shuffleBtn);
+    }
 });
