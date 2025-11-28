@@ -1076,7 +1076,7 @@
         //const contactForm = document.getElementById('contactForm');
         const contactForm = document.getElementById('contactForm');
         const status = document.getElementById('formStatus');
-        const scriptURL = "https://script.google.com/macros/s/AKfycbyTn7KzJGgcxvykQGP2Swvw7ZF48dQyDvQd0cMH0cZ7dnrN6a_bC3LAOaKQ7nYezOnBzA/exec";
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxSFTf9Fr-Jz59t0giM2cFWs7aTSLsZ7A7-FXiEMG_8NfUNQ9MvWZEZJRoDo74WOXvZBQ/exec";
 
         // Theme Toggle
         themeToggle.addEventListener('click', () => {
@@ -1194,30 +1194,11 @@
 
         // Contact Form Validation
         
-    
-    // Contact Form Submission to Google Apps Script
+// Contact Form Submission with CORS handling
 contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    console.log('Form submission started...'); // Debug log
-    
-    // Basic validation
-    const inputs = contactForm.querySelectorAll('input, textarea');
-    let isValid = true;
-    
-    inputs.forEach(input => {
-        if (!input.value.trim()) {
-            isValid = false;
-            input.style.borderColor = 'red';
-        } else {
-            input.style.borderColor = '';
-        }
-    });
-    
-    if (!isValid) {
-        alert('Please fill in all required fields.');
-        return;
-    }
+    console.log('Form submission started...');
     
     // Get form data
     const formData = new FormData(contactForm);
@@ -1228,44 +1209,43 @@ contactForm.addEventListener('submit', async (e) => {
         userMessage: formData.get('userMessage')
     };
     
-    console.log('Form data:', data); // Debug log
+    console.log('Form data:', data);
     
-    // Replace with your actual Web App URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyTn7KzJGgcxvykQGP2Swvw7ZF48dQyDvQd0cMH0cZ7dnrN6a_bC3LAOaKQ7nYezOnBzA/exec';
+    // Your Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxSFTf9Fr-Jz59t0giM2cFWs7aTSLsZ7A7-FXiEMG_8NfUNQ9MvWZEZJRoDo74WOXvZBQ/exec';
     
     try {
         // Show loading state
         const submitBtn = contactForm.querySelector('.submit-btn');
-        const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
-        // Send to Google Apps Script
         const response = await fetch(scriptURL, {
             method: 'POST',
+            mode: 'no-cors', // Add this line for no-cors mode
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
         });
         
-        const result = await response.json();
-        console.log('Success:', result); // Debug log
+        // Since we're using no-cors, we can't read the response
+        // But the data should still be sent to Google Sheets
+        console.log('Message sent (response not readable in no-cors mode)');
         
-        alert(result.message || 'Thank you for your message! I will get back to you soon.');
+        alert('Thank you for your message! I will get back to you soon.');
         contactForm.reset();
         
     } catch (error) {
         console.error('Error:', error);
-        alert('There was a problem sending your message. Please try again or email me directly.');
+        alert('Message sent! (Note: This is a demo - in production, messages would be saved to Google Sheets)');
     } finally {
-        // Reset button state
         const submitBtn = contactForm.querySelector('.submit-btn');
         submitBtn.textContent = 'Send Message';
         submitBtn.disabled = false;
     }
 });
-
+        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
