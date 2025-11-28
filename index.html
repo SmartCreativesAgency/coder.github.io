@@ -689,6 +689,32 @@
                 align-items: flex-start;
             }
             
+            /* Text Animation Styles */
+.multiple-text {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.multiple-text::after {
+    content: '|';
+    position: absolute;
+    right: -8px;
+    color: var(--primary-color);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Ensure the hero title has enough space for the animation */
+.hero-title {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
             .section-title {
                 font-size: 2rem;
             }
@@ -731,25 +757,27 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm <span>Fatima Rizvi</span><br>Front-End Developer</h1>
-                <p class="hero-subtitle">I build beautiful, responsive web experiences that delight users and drive results.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                </div>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-codepen"></i></a>
-                </div>
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">I'm <span>Fatima Rizvi</span><br>
+                And I'm a <span class="multiple-text"></span>
+            </h1>
+            <p class="hero-subtitle">I build beautiful, responsive web experiences that delight users and drive results.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-codepen"></i></a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Skills Section -->
     <section class="section" id="skills">
@@ -971,7 +999,7 @@
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <div class="contact-item">
+                <!-- <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
@@ -979,17 +1007,17 @@
                         <h3>Location</h3>
                         <p>San Francisco, CA</p>
                     </div>
-                </div>
+                </div> -->
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div>
                         <h3>Email</h3>
-                        <p>alex@example.com</p>
+                        <p>thesmartdesigns4@gmail.com</p>
                     </div>
                 </div>
-                <div class="contact-item">
+                <!-- <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-phone"></i>
                     </div>
@@ -997,7 +1025,7 @@
                         <h3>Phone</h3>
                         <p>+1 (555) 123-4567</p>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="contact-form">
                 <form id="contactForm">
@@ -1116,6 +1144,65 @@
                 header.classList.remove('nav-scrolled');
             }
         });
+
+        // Text Animation for Hero Section
+const typedTextSpan = document.querySelector('.multiple-text');
+const cursorSpan = document.querySelector('.multiple-text::after');
+
+const textArray = [
+    "Front-End Developer",
+    "UI/UX Designer",
+    "Graphic Designer", 
+    "Web Designer",
+    "JavaScript Developer",
+    "Java Developer",
+    "Python Developer",
+    "Full Stack Developer",
+    "Backend Developer",
+    "React Developer"
+];
+const typingDelay = 100;
+const erasingDelay = 50;
+const newTextDelay = 2000; // Delay between current and next text
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+        if(!typedTextSpan.classList.contains("typing")) {
+            typedTextSpan.classList.add("typing");
+        }
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+    } 
+    else {
+        typedTextSpan.classList.remove("typing");
+        setTimeout(erase, newTextDelay);
+    }
+}
+
+function erase() {
+    if (charIndex > 0) {
+        if(!typedTextSpan.classList.contains("typing")) {
+            typedTextSpan.classList.add("typing");
+        }
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+    } 
+    else {
+        typedTextSpan.classList.remove("typing");
+        textArrayIndex++;
+        if(textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay + 1100);
+    }
+}
+
+// Start the animation when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    if(textArray.length) setTimeout(type, newTextDelay + 250);
+});
 
         // Project Filtering
         filterBtns.forEach(btn => {
