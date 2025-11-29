@@ -6,7 +6,7 @@ Welcome to my professional portfolio! This site showcases my projects, skills, a
 
 ## 🚀 Live Demo
 
-Visit my portfolio: [https://coder.github.io](https://coder.github.io)
+Visit my portfolio: [https://SmartCreativesAgency/coder.github.io](https:SmartCreativesAgency/coder.github.io)
 
 
 ## 🛠️ Technologies Used
